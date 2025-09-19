@@ -12,7 +12,7 @@ import {
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 
-// Storage interface for all CFO Helper operations
+// Storage interface for all Pivora operations
 export interface IStorage {
   // User operations
   getUser(id: string): Promise<User | undefined>;

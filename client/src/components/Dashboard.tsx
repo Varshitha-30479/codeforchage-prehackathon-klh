@@ -6,6 +6,7 @@ import AIRecommendations from "./AIRecommendations";
 import UsageTracker from "./UsageTracker";
 import ScenarioTemplates from "./ScenarioTemplates";
 import FinancialTwinComparator from "./FinancialTwinComparator";
+import VoiceCommands from "./VoiceCommands";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -124,7 +125,7 @@ export default function Dashboard() {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <BarChart3 className="w-8 h-8 text-primary" />
-              <h1 className="text-2xl font-bold text-foreground">CFO Helper</h1>
+              <h1 className="text-2xl font-bold text-foreground">Pivora</h1>
             </div>
             <Badge variant="outline" className="font-mono text-xs">
               Scenario Analysis
@@ -166,6 +167,19 @@ export default function Dashboard() {
               planType="free"
               onUpgrade={() => console.log('Upgrade triggered')}
               onPurchaseCredits={() => console.log('Purchase credits triggered')}
+            />
+
+            <VoiceCommands
+              onUpdateRevenue={setMonthlyRevenue}
+              onUpdateExpenses={setMonthlyExpenses}
+              onUpdateTeamSize={setTeamSize}
+              onUpdateBurnRate={setBurnRate}
+              currentValues={{
+                monthlyRevenue,
+                monthlyExpenses,
+                teamSize,
+                burnRate
+              }}
             />
             
             <Card>

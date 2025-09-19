@@ -1,4 +1,4 @@
-# CFO Helper Design Guidelines
+# Pivora Design Guidelines
 
 ## Design Approach
 **System-Based Approach**: Using Material Design principles adapted for financial applications. The tool prioritizes data clarity, professional trust, and efficient workflow - essential for CFO-level financial planning.
