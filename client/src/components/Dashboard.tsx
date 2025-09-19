@@ -5,6 +5,7 @@ import FinancialChart from "./FinancialChart";
 import AIRecommendations from "./AIRecommendations";
 import UsageTracker from "./UsageTracker";
 import ScenarioTemplates from "./ScenarioTemplates";
+import FinancialTwinComparator from "./FinancialTwinComparator";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -311,6 +312,25 @@ export default function Dashboard() {
               />
               <ScenarioTemplates onSelectTemplate={handleSelectTemplate} />
             </div>
+
+            {/* Financial Twin Comparator */}
+            <FinancialTwinComparator
+              userMetrics={{
+                teamSize,
+                monthlyRevenue,
+                monthlyExpenses,
+                burnRate,
+                runway
+              }}
+              onSelectTwin={(twin) => {
+                console.log('Selected financial twin for analysis:', twin.name);
+                // Apply twin's metrics for comparison
+                setMonthlyRevenue(twin.monthlyRevenue);
+                setMonthlyExpenses(twin.monthlyExpenses);
+                setBurnRate(twin.burnRate);
+                setTeamSize(twin.teamSize);
+              }}
+            />
           </div>
         </main>
       </div>
